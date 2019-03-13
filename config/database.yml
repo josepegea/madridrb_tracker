@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: madridrb
+  host: localhost
+  port: 5432
+  username: u0_a22

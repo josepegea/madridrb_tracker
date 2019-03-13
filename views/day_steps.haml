@@ -1,0 +1,20 @@
+%h1 Steps for day #{@day}
+
+%canvas#graph{ width: "80%", height: "50%" }
+
+:javascript
+  var graphLabels = #{(0..23).to_a.to_json};
+  var graphData = #{@hours.to_json};
+  var ctx = document.getElementById("graph").getContext('2d');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: graphLabels,
+      datasets: [{
+        label: 'Steps',
+        data: graphData
+      }]
+    }
+  });
+
+

@@ -1,0 +1,15 @@
+%h1 Monitor
+
+%p= "You walked #{@steps} steps today"
+
+%table
+  %tr
+    %th Day
+    %th Steps
+  - @steps_summary.each do |day|
+    %tr
+      %th= day.moment.strftime("%a %d %b")
+      %th= day.steps
+      %th= link_to("more...", "day_steps?day=#{day.moment.to_date}")
+      %th= link_to("map...", "map?day=#{day.moment.to_date}")
+      
